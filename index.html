@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Ecommerce</title>
+</head>
+<body>
+    <nav>
+        <a href="index.html"></a>
+        <a href="wishlist.html"></a>
+        <a href="cart.html"></a>
+    </nav>
+    <h1>Products</h1>
+    <button id="loadproducts">Load Products</button>
+    <div id="productgrid" class="grid"></div>
+    <script>
+        document.getElementById('loadproducts').addEventListener('click',loadproducts);
+        function loadproducts(){
+            fetch('https://fakestoreapi.com/products')
+            .then(response=>response.json())
+            .then(data=>{
+                const productgrid=document.getElementById('productgrid');
+                productgrid.innerHTML='';
+                data.forEach(product)=>{
+                    const card=document.createElement('div');
+                    card.className='productcard';
+                    card.innerHTML='<img src="${"product.image"}"/>                                                                                                                                                                                                                                                                                                                                                                                                                                                         product.image}"' alt="${product.title}">
+                    <h3>${product.title}</h3>
+
+                    localStorage.setItem('cartproducts',JSON.stringify(cartproducts));
+                    alert('Added to cart');               
+                    
+                }
+            }
+        
+    
+    </script>
+</body>
+</html>
